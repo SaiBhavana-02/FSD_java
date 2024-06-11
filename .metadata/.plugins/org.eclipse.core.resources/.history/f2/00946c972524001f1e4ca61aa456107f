@@ -1,0 +1,7 @@
+
+public class VowelsFinder {
+	String str;
+	public void readString() {
+		
+	}
+}

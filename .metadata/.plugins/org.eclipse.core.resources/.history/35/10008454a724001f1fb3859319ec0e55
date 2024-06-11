@@ -1,0 +1,88 @@
+package com.pace.library.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import com.pace.library.bean.Book;
+import com.pace.library.helper.DbConnector;
+
+public class BookDAO {
+	private Connection connection=null;
+	private PreparedStatement pstatement=null;
+	private ResultSet resultSet=null;
+	ArrayList<Book> bookList=null;
+	private Statement statement=null;
+	private static String bookQry="select * from book";
+	/***************Get book data***************************/
+	public ArrayList<Book>getBooks() throws ClassNotFoundException,SQLException{
+		try {
+			connection=DbConnector.createConnection();
+			pstatement=connection.prepareStatement(bookQry);
+			resultSet=pstatement.executeQuery();
+			Book book;
+			bookList=new ArrayList<Book>();
+			
+			while(resultSet.next()) {
+				int bookId;
+				String bookName;
+				String author;
+			    float price;
+			    
+			    book=new Book();
+			    bookId=resultSet.getInt(1);
+				bookName=resultSet.getString(2);
+				author=resultSet.getString(3);
+				price=resultSet.getFloat(4);
+				
+				book.setBookId(bookId);
+				book.setBookName(bookName);
+				book.setBookAuthor(author);
+				book.setBookPrice(price);
+				
+				bookList.add(book);
+				book=null;
+			}
+		}catch(SQLException sqlex) {
+		}finally {
+			DbConnector.closeConnection();
+		}
+		return bookList;
+	}
+	/******************Show list of books************************/
+	public void showBookList(ArrayList<Book>bookList2) {
+		System.out.println("In DAO layer");
+		for(Book book:bookList2) {
+			System.out.print(book.getBookId());
+			System.out.print("\t"+book.getBookName());
+			System.out.print("\t"+book.getBookAuthor());
+			System.out.println("\t"+book.getBookPrice());
+		}
+	}
+	/***************Updating book****************/
+	public boolean updateBooksByPriceSlash(String name)throws ClassNotFoundException,SQLException{
+		pstatement=null;
+		connection=DbConnector.createConnection();
+		//discount=p*(34.28/100)
+		//New Price=P−Discount Amount
+		String updPriceQry="update book set price=price*0.6572 where id=?";
+		statement=connection.prepareStatement(updPriceQry);
+		String updateQry=
+				"update book set price =case name " +
+				"when 'Alchemist' then price - price * (34.28/100)" +
+				"when 'Computer Networks' then price - price * (3.2/100)"+
+				"where name in('Alchemist','ComputerNetworks')";
+		//int rows=statement.executeUpdate();
+		boolean isUpdate=true;
+		if(rows!=0) {
+			isUpdate=true;
+		}else {
+			isUpdate=false;
+		}
+		DbConnector.closeConnection();
+		return isUpdate;
+	}
+}

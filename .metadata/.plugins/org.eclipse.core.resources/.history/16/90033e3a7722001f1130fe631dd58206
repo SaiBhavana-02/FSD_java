@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class SuperMarket {
+
+	public static void main(String[] args) {
+		String Item_Name;
+		float net_price;
+		int total_items;
+		Scanner scnr=new Scanner(System.in);
+		System.out.println("enter total: ");
+		total_items=scnr.nextInt();
+		for(int i=0;i<total_items;i++) {
+			System.out.println("Enter: ");
+			Item_Name=scnr.next();
+			net_price=scnr.nextFloat();
+		}
+	}
+
+}

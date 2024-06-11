@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class CustomerDetails {
+	int id;
+	String name;;
+	float amount;
+	public CustomerDetails() {
+		this.id=id;
+		this.name=name;
+		this.amount=amount;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
+
+	public void Display() {
+		System.out.println("Customer Id: "+CustomerId);
+		System.out.println("Customer Name: "+CustomerName);
+		System.out.println("Customer Order Amount: "+OrderAmount);
+	}
+}

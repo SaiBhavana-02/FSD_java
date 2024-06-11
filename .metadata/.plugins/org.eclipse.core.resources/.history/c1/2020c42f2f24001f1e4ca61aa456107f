@@ -1,0 +1,6 @@
+import java.util.Scanner;
+public class IntegerWithOddNos {
+	int num;
+	Scanner scnr=new Scanner(System.in);
+	
+}

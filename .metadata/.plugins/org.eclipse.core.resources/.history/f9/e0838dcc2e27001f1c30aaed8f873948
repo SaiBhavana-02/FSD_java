@@ -1,0 +1,20 @@
+package com.pace.product.service;
+import com.pace.product.bean.Product;
+import com.pace.product.dao.ProductDAO;
+import java.util.ArrayList;
+
+import com.pace.product.bean.Product;
+
+public class ProductServiceProvider {
+	
+	static ProductDAO productDAO=new ProductDAO();
+	
+	public static void addDetails(Product product) {
+		productDAO.addDetails(product);
+	}
+	
+	public ArrayList<Product> sendDetails(ArrayList<Product> productList){
+		productDAO.sendDetails(productList);
+		return productList;	
+	}
+}

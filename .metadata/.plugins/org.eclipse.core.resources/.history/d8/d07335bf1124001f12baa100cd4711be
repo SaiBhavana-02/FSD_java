@@ -1,0 +1,15 @@
+import java.util.Scanner;
+import java.util.*;
+public class StringPalindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scnr=new Scanner(System.in);
+		System.out.println("Enter String: ");
+		String str=scnr.next();
+		if(str==str.reverse()) {
+			
+		}
+	}
+
+}

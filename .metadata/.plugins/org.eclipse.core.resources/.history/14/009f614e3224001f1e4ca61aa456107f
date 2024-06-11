@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class IntegerWithOddNos {
+	public static boolean oddDigits(int num) {
+		String numStr = Integer.toString(num);
+		byte flag=1;
+		for(int i=0;i<num;i++) {
+			int digit=Character.getNumericValue(i);
+			if(digit%2==0) {
+				flag=0;
+			}
+		}
+		if(flag==1) {
+			System.out.println(oddDigits(num));
+		}else {
+			System.out.println(oddDigits(num));
+		}
+	}
+	public static void main(String[] args) {
+		int num;
+		Scanner scnr=new Scanner(System.in);
+		num=scnr.nextInt();
+		IntegerWithOddNos od=new IntegerWithOddNos();
+		od.oddDigits(num);
+	}
+}
+

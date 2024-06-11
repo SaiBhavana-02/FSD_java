@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class HandlingArithmeticException {
+	public static void main(String[] args) {
+		int dividend,divisor,quotient;
+		Scanner scnr=new Scanner(System.in);
+		System.out.println("Enter Dividend: ");
+		dividend=scnr.nextInt();
+		
+		System.out.println("Enter Divisor: ");
+		divisor=scnr.nextInt();
+		while(true) {
+			try {
+				quotient=dividend/divisor;
+				System.out.println(quotient);
+				break;
+			}catch(ArithmeticException e) {
+				System.out.println("Divisor can't be zero please re-enter divisor");
+			}
+		}
+		scnr.close();
+	}
+}

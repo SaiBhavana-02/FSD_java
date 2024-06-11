@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class CustomerDetails {
+	int CustomerId;
+	String CustomerName;;
+	float OrderAmount;
+	public CustomerDetails(int id,String name,Float amount) {
+		this.CustomerId=id;
+		this.CustomerName=name;
+		this.OrderAmount=amount;
+	}
+	public int getCustomerId() {
+		return CustomerId;
+	}
+	public void setCustomerId(int customerId) {
+		CustomerId = customerId;
+	}
+	public String getCustomerName() {
+		return CustomerName;
+	}
+	public void setCustomerName(String customerName) {
+		CustomerName = customerName;
+	}
+	public float getOrderAmount() {
+		return OrderAmount;
+	}
+	public void setOrderAmount(float orderAmount) {
+		OrderAmount = orderAmount;
+	}
+
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Details</title>
+</head>
+<body>
+	<h2>Enter Product Details!</h2>
+	<form action="ProductServlet">
+	Product Id:<input type="number" name="Enter Id"/><br>
+	Product name:<input type="text" name="Enter name"/><br>
+	Product Price:<input type="number" name="Enter Price"/>
+	<input type="submit" value="submit"/>
+	</form>
+</body>
+</html>

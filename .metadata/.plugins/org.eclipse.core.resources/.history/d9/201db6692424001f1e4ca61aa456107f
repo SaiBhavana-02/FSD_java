@@ -1,0 +1,6 @@
+import java.util.Scanner;
+public class VowelsFinder {
+	String str;
+	Scanner scnr=new Scanner(System.in);
+	str=scnr.next();
+}

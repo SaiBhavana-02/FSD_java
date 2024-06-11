@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import ="java.util.ArrayList" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	ArrayList<Product> ProductList = (ArrayList<Product>) request.getAttribute("productList");
+	%>
+
+	<table border='1'>
+		<%
+		for (Product Product : ProductList) {
+		%>
+		<tr>
+			<td align="center"><%=Product.getProductId()%></td>
+			<td align="center"><%=Product.getBname()%></td>
+			<td align="center"><%=Product.getAuthor()%></td>
+			<td align="center"><%=Product.getPrice()%></td>
+		</tr>
+		<%
+		}
+		%>
+</body>
+</html>

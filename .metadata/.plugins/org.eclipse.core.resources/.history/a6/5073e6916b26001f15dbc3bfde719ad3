@@ -1,0 +1,10 @@
+package com.pace.product.service;
+import java.util.ArrayList;
+
+import com.pace.product.bean.Product;
+
+public class ProductServiceProvider {
+	ArrayList<Product> productList= new ArrayList<Product>();
+	ProductDAO productDAO=new ProductDAO();
+	
+}

@@ -1,0 +1,13 @@
+
+public class VowelsFinder {
+	String str;
+	int count=0;
+	public void readString() {
+		this.str=str;
+	}
+	public void vowels(String str) {
+		for(int i=0;i<str.length();i++) {
+			if(str.charAt(i)=='a' &&)
+		}
+	}
+}

@@ -1,0 +1,11 @@
+import java.util.*;
+import java.util.HashMap;
+public class SuperMarket {
+
+	public static void main(String[] args) {
+		Scanner scnr=new Scanner(System.in);
+		int n=scnr.nextInt();
+		scnr.nextLine();
+		LinkedHashMap<String,int>ITEM_PRICE=new LinkedHashMap<>();
+	}
+}

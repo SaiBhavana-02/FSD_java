@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class IntegerWithOddNos {
+	public static void main(String[] args) {
+		int num;
+		Scanner scnr=new Scanner(System.in);
+		num=scnr.nextInt();
+		String numStr = Integer.toString(num);
+		for(int i=0;i<num;i++) {
+			int digit=Character.getNumericValue(i);
+			if(digit%2==0) {
+				
+			}
+		}
+	}
+}
